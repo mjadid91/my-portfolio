@@ -1,73 +1,43 @@
-# Welcome to your Lovable project
+# 🌐 Portfolio – Mohamed JADID
 
-## Project info
+Bienvenue sur mon portfolio personnel, conçu pour présenter mon parcours, mes projets et mes compétences dans le domaine du développement d'applications.
 
-**URL**: https://lovable.dev/projects/9e22ea6a-c968-4e26-98ac-810340d479c3
+## 🎯 Objectif
 
-## How can I edit this code?
+Ce portfolio a été créé dans le cadre de ma formation en BUT Informatique à l'IUT d'Orsay (Université Paris-Saclay). Il a pour but de :
+- Me présenter de manière professionnelle
+- Mettre en valeur mes projets personnels et académiques
+- Partager mes compétences techniques et humaines
+- Permettre aux recruteurs et partenaires de me contacter facilement
 
-There are several ways of editing your application.
+## 🛠️ Technologies utilisées
 
-**Use Lovable**
+- **HTML5 / CSS3 / JavaScript**
+- **Responsive Design** (compatible mobile, tablette, desktop)
+- **Dark Mode** (thème clair/sombre avec switch)
+- **Barres de progression animées** pour les compétences
+- **Formulaire de contact fonctionnel**
+- **Téléchargement de CV** intégré
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9e22ea6a-c968-4e26-98ac-810340d479c3) and start prompting.
+## 🧩 Contenu du portfolio
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Page d’accueil** avec slogan et nom
+- **Section "À propos de moi"** avec liens vers LinkedIn, GitHub, Email, etc.
+- **Compétences techniques** avec barres de progression animées
+- **Outils utilisés** (IDE, plateformes, moteurs de jeux…)
+- **Compétences générales** (communication, rigueur, etc.)
+- **Parcours scolaire** sous forme de timeline
+- **Projets** avec visuels, descriptions et technologies
+- **Formulaire de contact** pour envoyer un message
+- **Pied de page** avec copyright et liens légaux
 
-**Use your preferred IDE**
+## 📄 Auteur
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Mohamed JADID  
+Étudiant en BUT Informatique – Développement d'applications  
+IUT d'Orsay – Université Paris-Saclay  
+[LinkedIn](#) – [GitHub](#) – [Email](#)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9e22ea6a-c968-4e26-98ac-810340d479c3) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+> Ce portfolio est conçu pour évoluer au fil du temps, avec l'ajout de nouveaux projets, compétences et expériences.
