@@ -8,7 +8,7 @@ const ProjectsSection: React.FC = () => {
       id: 1,
       title: 'My Pizza',
       description: 'Appli de commande de pizza (HTML/CSS/JS/PHP), avec interface intuitive et gestion de commandes.',
-      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=400&fit=crop',
+      image: '/lovable-uploads/1961e5e7-733b-4668-aeb6-ad1e1a4f14d7.png',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP'],
       demoLink: '#',
       codeLink: '#'
@@ -17,7 +17,7 @@ const ProjectsSection: React.FC = () => {
       id: 2,
       title: 'Démocratie Participative',
       description: 'Plateforme de vote en ligne sécurisée permettant aux citoyens de participer aux décisions publiques.',
-      image: 'https://images.unsplash.com/photo-1541872705-1f73c6400ec9?w=600&h=400&fit=crop',
+      image: '/lovable-uploads/632d612d-ebe0-4d89-bc97-94d18130ffce.png',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
       demoLink: '#',
       codeLink: '#'
@@ -26,7 +26,7 @@ const ProjectsSection: React.FC = () => {
       id: 3,
       title: 'Calculis : La grande Évasion',
       description: 'Jeu 2D développé avec Godot Engine, mêlant aventure et énigmes mathématiques.',
-      image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop',
+      image: '/lovable-uploads/c8ac82aa-b02c-47b2-a762-b6463c76b325.png',
       technologies: ['Godot', 'GDScript', 'Game Design'],
       demoLink: '#',
       codeLink: '#'
