@@ -8,28 +8,37 @@ const ProjectsSection: React.FC = () => {
       id: 1,
       title: 'My Pizza',
       description: 'Appli de commande de pizza (HTML/CSS/JS/PHP), avec interface intuitive et gestion de commandes.',
-      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=400&fit=crop',
+      image: 'img/projet1.jpg',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/mjadid91/MaPizza'
     },
     {
       id: 2,
       title: 'Démocratie Participative',
       description: 'Plateforme de vote en ligne sécurisée permettant aux citoyens de participer aux décisions publiques.',
-      image: 'https://images.unsplash.com/photo-1541872705-1f73c6400ec9?w=600&h=400&fit=crop',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      image: 'img/projet2.jpg',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/mjadid91/Democratie-Participative-App'
     },
     {
       id: 3,
       title: 'Calculis : La grande Évasion',
       description: 'Jeu 2D développé avec Godot Engine, mêlant aventure et énigmes mathématiques.',
-      image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop',
+      image: 'img/projet3.jpg',
       technologies: ['Godot', 'GDScript', 'Game Design'],
       demoLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/mjadid91/Calculis-Escape-Game'
+    },
+    {
+      id: 4,
+      title: 'AppContact',
+      description: 'Application de gestion de contacts avec interface utilisateur moderne et fonctionnalités avancées.',
+      image: 'img/projet4.jpg',
+      technologies: ['React', 'Node.js', 'TypeScript', 'Tailwind CSS'],
+      demoLink: '#',
+      codeLink: 'https://github.com/mjadid91/AppContact'
     }
   ];
 
@@ -45,7 +54,7 @@ const ProjectsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -56,7 +65,7 @@ const ProjectsSection: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-84 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 flex space-x-2">
@@ -80,10 +89,10 @@ const ProjectsSection: React.FC = () => {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-base">
                   {project.description}
                 </p>
                 
@@ -109,7 +118,7 @@ const ProjectsSection: React.FC = () => {
             Envie de voir plus de projets ?
           </p>
           <a
-            href="https://github.com"
+            href="https://github.com/mjadid91"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
           >
             <Github className="w-5 h-5 mr-2" />

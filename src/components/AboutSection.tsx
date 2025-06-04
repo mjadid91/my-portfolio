@@ -66,15 +66,15 @@ const AboutSection: React.FC = () => {
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </a>
-              <a href="https://github.com" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <a href="https://github.com/mjadid91/" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub
               </a>
-              <a href="mailto:mohamed.jadid@example.com" className="flex items-center text-green-600 hover:text-green-800 transition-colors">
+              <a href="mailto:med.jadid@hotmail.com" className="flex items-center text-green-600 hover:text-green-800 transition-colors">
                 <Mail className="w-5 h-5 mr-2" />
                 Email
               </a>
-              <a href="tel:+33123456789" className="flex items-center text-purple-600 hover:text-purple-800 transition-colors">
+              <a href="tel:+33613650602" className="flex items-center text-purple-600 hover:text-purple-800 transition-colors">
                 <Phone className="w-5 h-5 mr-2" />
                 Téléphone
               </a>
