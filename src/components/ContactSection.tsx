@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Send, MapPin, Mail, Phone } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -24,9 +25,22 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulation d'envoi du formulaire
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Configuration EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Mohamed', // Vous pouvez personnaliser ceci
+      };
+
+      await emailjs.send(
+        'service_oeyrcfy', // Service ID
+        'template_m7zpa3f', // Template ID
+        templateParams,
+        'rgb_j_ayHFfKRn1q1' // Public Key
+      );
       
       toast({
         title: "Message envoyé !",
@@ -40,9 +54,10 @@ const ContactSection: React.FC = () => {
         message: ''
       });
     } catch (error) {
+      console.error('Erreur EmailJS:', error);
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue. Veuillez réessayer.",
+        description: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
         variant: "destructive",
       });
     } finally {
