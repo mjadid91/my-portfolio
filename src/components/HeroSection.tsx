@@ -37,11 +37,6 @@ const HeroSection: React.FC = () => {
     }
   };
 
-  const downloadCV = () => {
-    // Simulation du téléchargement du CV
-    console.log('Téléchargement du CV...');
-    // Ici vous pourrez ajouter le vrai lien vers votre CV
-  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
@@ -66,14 +61,16 @@ const HeroSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-8">
               Mohamed JADID
             </h2>
-            
-            <button
-              onClick={downloadCV}
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+
+            <a
+                href="/my-portfolio/CV.pdf"
+                download="Mohamed-Jadid-CV.pdf"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Download className="w-5 h-5 mr-2" />
               Télécharger mon CV
-            </button>
+            </a>
+
           </div>
         </div>
       </div>
