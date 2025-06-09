@@ -26,22 +26,25 @@ const ContactSection: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Configuration EmailJS
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+        name: formData.name,
+        email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_name: 'Mohamed', // Vous pouvez personnaliser ceci
+        to_name: 'Mohamed',
+        time: new Date().toLocaleString('fr-FR', {
+          dateStyle: 'full',
+          timeStyle: 'short',
+        }),
       };
 
       await emailjs.send(
-        'service_oeyrcfy', // Service ID
-        'template_m7zpa3f', // Template ID
-        templateParams,
-        'rgb_j_ayHFfKRn1q1' // Public Key
+          'service_oeyrcfy',
+          'template_m7zpa3f',
+          templateParams,
+          'rgb_j_ayHFfKRn1q1'
       );
-      
+
       toast({
         title: "Message envoyé !",
         description: "Merci pour votre message. Je vous répondrai rapidement.",
@@ -64,6 +67,7 @@ const ContactSection: React.FC = () => {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <section id="contact" className="py-20 bg-white dark:bg-gray-900">
