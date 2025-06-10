@@ -100,7 +100,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-white">Email</h4>
-                  <p className="text-gray-600 dark:text-gray-300">mohamed.jadid@example.com</p>
+                  <p className="text-gray-600 dark:text-gray-300">med.jadid@hotmail.com</p>
                 </div>
               </div>
 
@@ -110,7 +110,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-white">Téléphone</h4>
-                  <p className="text-gray-600 dark:text-gray-300">+33 1 23 45 67 89</p>
+                  <p className="text-gray-600 dark:text-gray-300">+33 6 13 65 06 02</p>
                 </div>
               </div>
 
