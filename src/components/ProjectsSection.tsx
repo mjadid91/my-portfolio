@@ -45,7 +45,7 @@ const ProjectsSection: React.FC = () => {
         title: 'Développement d\'une application de gestion CRM (stage)',
         description: 'Application de gestion CRM interne avec interface web et fonctionnalités sécurisées.',
         image: 'img/projet5.jpg',
-        technologies: ['React', 'Node.js', 'Vite.js', 'PostgreSQL', 'Tailwind CSS'],
+        technologies: ['React', 'Node.js', 'Vite.js', 'PostgreSQL', 'Tailwind CSS', 'Supabase'],
         demoLink: '#',
         codeLink: ''
     }
