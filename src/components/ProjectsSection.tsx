@@ -39,6 +39,15 @@ const ProjectsSection: React.FC = () => {
       technologies: ['React', 'Node.js', 'TypeScript', 'Tailwind CSS'],
       demoLink: '#',
       codeLink: 'https://github.com/mjadid91/AppContact'
+    },
+    {
+        id: 5,
+        title: 'Développement d\'une application de gestion CRM (stage)',
+        description: 'Application de gestion CRM interne avec interface web et fonctionnalités sécurisées.',
+        image: 'img/projet5.jpg',
+        technologies: ['React', 'Node.js', 'Vite.js', 'PostgreSQL', 'Tailwind CSS'],
+        demoLink: '#',
+        codeLink: ''
     }
   ];
 
