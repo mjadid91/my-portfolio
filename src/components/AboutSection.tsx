@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
             </p>
             
             {/* Contact Links */}
-            <div className="flex justify-center space-x-6 mb-12">
+            <div className="flex justify-center space-x-2 mb-12">
               <a href="https://linkedin.com" className="flex items-center text-blue-600 hover:text-blue-800 transition-colors">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
