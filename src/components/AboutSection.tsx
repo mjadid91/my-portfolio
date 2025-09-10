@@ -4,26 +4,31 @@ import { Linkedin, Github, Mail, Phone } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const skills = [
-    { name: 'HTML', level: 90 },
-    { name: 'CSS', level: 85 },
+    { name: 'HTML/CSS', level: 95 },
     { name: 'JavaScript', level: 80 },
-    { name: 'Java SE', level: 75 },
+    { name: 'Java SE/Swing', level: 90 },
     { name: 'Python', level: 70 },
     { name: 'C/C++/C#', level: 65 },
-    { name: 'SQL', level: 80 },
+    { name: 'SQL/MySQL/PostgreSQL', level: 90 },
     { name: 'Git', level: 85 },
     { name: 'Docker', level: 60 },
-    { name: 'GDScript', level: 70 }
+    { name: 'GDScript', level: 70 },
+    { name: 'PHP', level: 60 },
+    { name: 'Node.js', level: 65 },
+    { name: 'React', level: 65 },
+    { name: 'TailwindCSS', level: 80 },
   ];
 
   const tools = [
     'GitLab', 'GitHub', 'IntelliJ', 'DBeaver', 'WebStorm', 
-    'Visual Studio Code', 'Android Studio', 'Godot', 'Visual Paradigm'
+    'Visual Studio Code', 'Android Studio', 'Godot', 'Visual Paradigm',
+      'Figma', 'Windev', 'Postman', 'Supabase', 'Unity'
   ];
 
   const softSkills = [
     'Communication', 'Adaptabilité', 'Ponctualité', 
-    'Rigueur', 'Résolution de problèmes', 'Travail en équipe'
+    'Rigueur', 'Résolution de problèmes', 'Travail en équipe',
+      'Environnement professionnel'
   ];
 
   const education = [
