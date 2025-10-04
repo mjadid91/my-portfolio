@@ -45,7 +45,7 @@ const ProjectsSection: React.FC = () => {
         },
         {
             id: 5,
-            title: 'AppSeniors - CRM interne',
+            title: 'Application de gestion interne',
             context: 'Stage S4',
             description: 'Développement d’une application CRM interne sécurisée, avec interface web moderne et gestion complète des données.',
             image: 'img/projet5.jpg',
