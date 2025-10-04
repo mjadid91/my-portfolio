@@ -91,10 +91,10 @@ const Footer: React.FC = () => {
             <span>© 2025 Mohamed JADID</span>
             <span className="mx-2">•</span>
             <span className="flex items-center">
-              Fait avec <Heart className="w-4 h-4 mx-1 text-red-600" fill="currentColor" /> à Gif-sur-Yvette
+              Fait à Gif-sur-Yvette
             </span>
           </div>
-
+          {/*<Heart className="w-4 h-4 mx-1 text-red-600" fill="currentColor" />*/}
           {/* Back to top */}
           <button
             onClick={scrollToTop}
