@@ -34,11 +34,12 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Mohamed JADID
-          </div>
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">
+                Mohamed JADID
+            </div>
 
-          {/* Desktop Navigation */}
+
+            {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}

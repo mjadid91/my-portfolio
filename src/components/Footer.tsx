@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent mb-4">
               Mohamed JADID
             </div>
             <p className="text-gray-400 leading-relaxed">
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
           {/* Back to top */}
           <button
             onClick={scrollToTop}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
+            className="bg-gradient-to-r from-sky-500 to-blue-700  hover:from-blue-700 hover:to-blue-900 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
             aria-label="Retour en haut"
           >
             <ArrowUp className="w-5 h-5" />

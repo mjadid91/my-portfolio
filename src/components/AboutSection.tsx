@@ -106,7 +106,7 @@ const AboutSection: React.FC = () => {
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                     <div
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-1000 ease-out"
+                      className="bg-gradient-to-r from-sky-500 to-blue-700 h-3 rounded-full transition-all duration-1000 ease-out"
                       style={{
                         width: `${skill.level}%`,
                         animationDelay: `${index * 0.1}s`
