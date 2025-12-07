@@ -5,7 +5,7 @@ import { Linkedin, Github, Mail, Phone } from 'lucide-react';
 const AboutSection: React.FC = () => {
     const skills = {
         frontend: [
-            { name: 'HTML/CSS', level: 95 },
+            { name: 'HTML / CSS', level: 95 },
             { name: 'JavaScript', level: 80 },
             { name: 'Bootstrap', level: 75 },
             { name: 'React', level: 65 },
@@ -13,28 +13,26 @@ const AboutSection: React.FC = () => {
         ],
         backend: [
             { name: 'Java SE / Swing', level: 90 },
-            { name: 'PHP', level: 60 },
+            { name: 'PHP', level: 80 },
             { name: 'Node.js', level: 65 },
-            { name: 'Python', level: 70 },
-            { name: 'Django', level: 70 },
-            { name: 'C / C++ / C#', level: 65 },
+            { name: 'Python · Django', level: 70 },
+            { name: 'C / C++ / C#', level: 70 },
         ],
         database: [
-            { name: 'SQL', level: 90 },
-            { name: 'MySQL', level: 90 },
-            { name: 'PostgreSQL', level: 90 },
+            { name: 'SQL · MySQL · PostgreSQL', level: 90 },
         ],
         other: [
             { name: 'Git', level: 85 },
-            { name: 'Docker', level: 60 },
+            { name: 'Docker · Kubernetes', level: 60 },
             { name: 'GDScript', level: 70 },
+            { name: 'Sparql · Wikidata', level: 60 },
         ]
     };
 
     const tools = [
         'GitLab','GitHub','IntelliJ','DBeaver','WebStorm','PyCharm',
         'Visual Studio Code','Android Studio','Godot','Visual Paradigm',
-        'Figma','Windev','Postman','Supabase','Unity','Jira'
+        'Figma','Windev','Postman','Supabase','Unity','Jira', 'GraphDB',
     ];
 
     const softSkills = [
