@@ -72,10 +72,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Légal</h4>
             <div className="space-y-2">
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
+              <a href="/" className="block text-gray-400 hover:text-white transition-colors">
                 Privacy
               </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
+              <a href="/" className="block text-gray-400 hover:text-white transition-colors">
                 Terms
               </a>
               <a href="#contact" className="block text-gray-400 hover:text-white transition-colors">

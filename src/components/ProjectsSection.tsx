@@ -52,6 +52,16 @@ const ProjectsSection: React.FC = () => {
             technologies: ['React', 'Node.js', 'Vite.js', 'PostgreSQL', 'Tailwind CSS', 'Supabase'],
             demoLink: '',
             codeLink: ''
+        },
+        {
+            id: 6,
+            title: 'Application de gestion de stages',
+            context: 'Mini-projet BUT 3',
+            description: "Application web permettant de gérer des offres de stage, les candidatures des étudiants et le suivi administratif, avec une interface claire et fonctionnelle.",
+            image: 'img/projet6.jpg',
+            technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
+            demoLink: '',
+            codeLink: 'https://github.com/mjadid91/webstage-django'
         }
     ];
 
