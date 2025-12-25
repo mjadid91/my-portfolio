@@ -62,6 +62,16 @@ const ProjectsSection: React.FC = () => {
             technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
             demoLink: '',
             codeLink: 'https://github.com/mjadid91/webstage-django'
+        },
+        {
+            id: 7,
+            title: 'Application de gestion de voyages',
+            context: 'Mini-projet BUT 3',
+            description: "Application web dédiée à la gestion des voyages, des villes et des étapes de parcours, intégrant un système de panier de commande et une interface claire, intuitive et fonctionnelle.",
+            image: 'img/projet7.jpg',
+            technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
+            demoLink: '',
+            codeLink: 'https://github.com/mjadid91/webtravel-django'
         }
     ];
 
