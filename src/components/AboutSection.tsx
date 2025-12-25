@@ -12,7 +12,8 @@ const AboutSection: React.FC = () => {
             { name: 'TailwindCSS', level: 80 },
         ],
         backend: [
-            { name: 'Java SE / Swing', level: 90 },
+            { name: 'Java SE/EE ', level: 90 },
+            { name: 'Java Spring Boot', level: 70 },
             { name: 'PHP', level: 80 },
             { name: 'Node.js', level: 65 },
             { name: 'Python · Django', level: 70 },
