@@ -45,26 +45,29 @@ const AboutSection: React.FC = () => {
         {
             year: '2021 – 2026',
             title: 'BUT Informatique',
-            institution: 'IUT d\'Orsay',
+            institution: "IUT d'Orsay",
             description: 'Formation complète en développement logiciel et technologies web',
             website: 'http://www.iut-orsay.universite-paris-saclay.fr/',
-            address: '13 Avenue des Sciences, 91190 Gif-sur-Yvette'
+            address: '13 Avenue des Sciences, 91190 Gif-sur-Yvette',
+            image: 'img/education/iut.jpg'
         },
         {
             year: '2019 – 2021',
-            title: 'STI2D',
-            institution: 'Lycée de l\'Essouriau',
-            description: 'Sciences et Technologies de l\'Industrie et du Développement Durable',
+            title: 'STI2D (Sciences et Technologies de l’Industrie et du Développement Durable)',
+            institution: "Lycée de l'Essouriau",
+            description: 'Sciences et Technologies de l’Industrie et du Développement Durable',
             website: 'https://lyceedelessouriau.fr/',
-            address: 'Avenue de Dordogne, 91940 Les Ulis'
+            address: 'Avenue de Dordogne, 91940 Les Ulis',
+            image: 'img/education/essouriau.jpg'
         },
         {
             year: '2018 – 2019',
-            title: 'Formation générale',
+            title: 'Seconde Générale et Technologique',
             institution: 'Lycée de la Vallée de Chevreuse',
-            description: 'Formation générale - Option Physique Chimie en Labo',
+            description: 'Option Physique Chimie en laboratoire',
             website: 'https://lyc-chevreuse-gif.ac-versailles.fr/',
-            address: '8 Rue de Madrid, 91190 Gif-sur-Yvette'
+            address: '8 Rue de Madrid, 91190 Gif-sur-Yvette',
+            image: 'img/education/lvc.jpg'
         }
     ];
 
@@ -164,53 +167,96 @@ const AboutSection: React.FC = () => {
 
                 {/* Education */}
                 <div>
-                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-12 text-center">🎓 Parcours scolaire</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-12 text-center">
+                        🎓 Parcours scolaire
+                    </h3>
+
                     <div className="max-w-4xl mx-auto relative">
+                        {/* Timeline */}
                         <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
+
                         {education.map((item, index) => (
-                            <div key={index} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                            <div
+                                key={index}
+                                className={`relative flex items-center mb-12 ${
+                                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                                }`}
+                            >
+                                {/* Point timeline */}
                                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
-                                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                                    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-700">
-                                        <div className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{item.year}</div>
-                                        <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{item.title}</h4>
-                                        {item.institution && (
-                                            <div className="flex items-center text-gray-600 dark:text-gray-400 font-medium mb-1">
-                                                <MapPin className="w-4 h-4 mr-1" />
-                                                {item.address ? (
+
+                                <div
+                                    className={`ml-12 md:ml-0 md:w-1/2 ${
+                                        index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
+                                    }`}
+                                >
+                                    {/* Card */}
+                                    <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+
+                                        {/* Image */}
+                                        {item.image && (
+                                            <div className="h-56 w-full overflow-hidden group">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.institution}
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                />
+                                            </div>
+                                        )}
+
+                                        {/* Content */}
+                                        <div className="p-6">
+                                            <div className="text-blue-600 dark:text-blue-400 font-semibold mb-2">
+                                                {item.year}
+                                            </div>
+
+                                            <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                                                {item.title} - {item.institution}
+                                            </h4>
+
+                                            {item.institution && (
+                                                <div className="flex items-center text-gray-600 dark:text-gray-400 font-medium mb-1">
+                                                    <MapPin className="w-4 h-4 mr-1" />
+                                                    {item.address ? (
+                                                        <a
+                                                            href={`https://maps.google.com/?q=${encodeURIComponent(item.address)}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="underline hover:text-blue-500 dark:hover:text-blue-300"
+                                                        >
+                                                            {item.address}
+                                                        </a>
+                                                    ) : (
+                                                        item.institution
+                                                    )}
+                                                </div>
+                                            )}
+
+                                            {item.website && (
+                                                <div className="flex items-center text-blue-500 dark:text-blue-300 mb-3">
+                                                    <Globe className="w-4 h-4 mr-1" />
                                                     <a
-                                                        href={`https://maps.google.com/?q=${encodeURIComponent(item.address)}`}
+                                                        href={item.website}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="underline hover:text-blue-500 dark:hover:text-blue-300"
+                                                        className="underline hover:text-blue-700 dark:hover:text-blue-100"
                                                     >
-                                                        {item.address}
+                                                        Site officiel
                                                     </a>
-                                                ) : (
-                                                    item.institution
-                                                )}
-                                            </div>
-                                        )}
-                                        {item.website && (
-                                            <div className="flex items-center text-blue-500 dark:text-blue-300 mb-3">
-                                                <Globe className="w-4 h-4 mr-1" />
-                                                <a
-                                                    href={item.website}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="underline hover:text-blue-700 dark:hover:text-blue-100"
-                                                >
-                                                    {item.website}
-                                                </a>
-                                            </div>
-                                        )}
-                                        <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                                                </div>
+                                            )}
+
+                                            <p className="text-gray-600 dark:text-gray-300">
+                                                {item.description}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
+
 
             </div>
         </section>

@@ -8,7 +8,7 @@ const ProjectsSection: React.FC = () => {
             title: 'My Pizza',
             context: 'Projet BUT 2',
             description: 'Application de commande de pizzas avec interface intuitive et gestion complète des commandes et des stocks.',
-            image: 'img/projet1.jpg',
+            image: 'img/projets/projet1.jpg',
             technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Java Swing'],
             demoLink: '#',
             codeLink: 'https://github.com/mjadid91/MaPizza'
@@ -18,7 +18,7 @@ const ProjectsSection: React.FC = () => {
             title: 'Démocratie Participative',
             context: 'Projet BUT 2',
             description: 'Plateforme sécurisée de vote en ligne permettant aux citoyens de participer aux décisions publiques.',
-            image: 'img/projet2.jpg',
+            image: 'img/projets/projet2.jpg',
             technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Java Swing'],
             demoLink: '#',
             codeLink: 'https://github.com/mjadid91/Democratie-Participative-App'
@@ -28,7 +28,7 @@ const ProjectsSection: React.FC = () => {
             title: 'Calculis : La grande Évasion',
             context: 'Projet BUT 2',
             description: 'Jeu 2D avec aventures, ennemis et énigmes mathématiques amusantes.',
-            image: 'img/projet3.jpg',
+            image: 'img/projets/projet3.jpg',
             technologies: ['Godot', 'GDScript', 'Game Design'],
             demoLink: '#',
             codeLink: 'https://github.com/mjadid91/Calculis-Escape-Game'
@@ -38,7 +38,7 @@ const ProjectsSection: React.FC = () => {
             title: 'AppContact - Gestion de contacts',
             context: 'Stage S4',
             description: 'Application de gestion de contacts avec interface moderne et fonctionnalités CRUD, développée lors de mon stage.',
-            image: 'img/projet4.jpg',
+            image: 'img/projets/projet4.jpg',
             technologies: ['React', 'Node.js', 'TypeScript', 'Tailwind CSS', 'WinDev (HFSQL)'],
             demoLink: '#',
             codeLink: 'https://github.com/mjadid91/AppContact'
@@ -48,7 +48,7 @@ const ProjectsSection: React.FC = () => {
             title: 'Application de gestion interne',
             context: 'Stage S4',
             description: 'Développement d’une application CRM interne sécurisée, avec interface web moderne et gestion complète des données.',
-            image: 'img/projet5.jpg',
+            image: 'img/projets/projet5.jpg',
             technologies: ['React', 'Node.js', 'Vite.js', 'PostgreSQL', 'Tailwind CSS', 'Supabase'],
             demoLink: '',
             codeLink: ''
@@ -58,7 +58,7 @@ const ProjectsSection: React.FC = () => {
             title: 'Application de gestion de stages',
             context: 'Mini-projet BUT 3',
             description: "Application web permettant de gérer des offres de stage, les candidatures des étudiants et le suivi administratif, avec une interface claire et fonctionnelle.",
-            image: 'img/projet6.jpg',
+            image: 'img/projets/projet6.jpg',
             technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
             demoLink: '',
             codeLink: 'https://github.com/mjadid91/webstage-django'
@@ -68,7 +68,7 @@ const ProjectsSection: React.FC = () => {
             title: 'Application de gestion de voyages',
             context: 'Mini-projet BUT 3',
             description: "Application web dédiée à la gestion des voyages, des villes et des étapes de parcours, intégrant un système de panier de commande et une interface claire, intuitive et fonctionnelle.",
-            image: 'img/projet7.jpg',
+            image: 'img/projets/projet7.jpg',
             technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
             demoLink: '',
             codeLink: 'https://github.com/mjadid91/webtravel-django'
