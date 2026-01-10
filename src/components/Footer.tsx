@@ -88,8 +88,8 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center text-gray-400 mb-4 md:mb-0">
-            <span>© 2025 Mohamed JADID</span>
-            <span className="mx-2">•</span>
+              <span>© {new Date().getFullYear()} Mohamed JADID</span>
+              <span className="mx-2">•</span>
             <span className="flex items-center">
               Fait à Gif-sur-Yvette
             </span>
