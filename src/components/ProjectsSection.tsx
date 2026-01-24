@@ -72,6 +72,16 @@ const ProjectsSection: React.FC = () => {
             technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
             demoLink: '',
             codeLink: 'https://github.com/mjadid91/webtravel-django'
+        },
+        {
+            id: 8,
+            title: 'Jeux vidéo Roguelike en 3D',
+            context: 'Grand projet BUT 3',
+            description: "Roguelike 3D médiéval sous Unity : exploration de donjons, combats en temps réel, ennemis et boss. Projet d’équipe mené sur un semestre avec focus gameplay et code propre.",
+            image: 'img/projets/projet8.jpg',
+            technologies: ['C#', 'Unity', 'Game Design'],
+            demoLink: '',
+            codeLink: ''
         }
     ];
 
