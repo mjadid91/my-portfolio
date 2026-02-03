@@ -60,6 +60,12 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
               Mes projets
             </button>
             <button
+                  onClick={() => scrollToSection('interests')}
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+                Mes centres d'intérêt
+            </button>
+            <button
               onClick={() => scrollToSection('contact')}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
@@ -113,6 +119,12 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                 className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 Mes projets
+              </button>
+              <button
+                  onClick={() => scrollToSection('projects')}
+                  className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                Mes centres d'intérêt
               </button>
               <button
                 onClick={() => scrollToSection('contact')}

@@ -6,6 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import InterestsSection from "@/components/InterestsSection.tsx";
 
 const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -39,6 +40,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
+      <InterestsSection />
       <ContactSection />
       <Footer />
     </div>
