@@ -37,6 +37,7 @@ const interests: Interest[] = [
         images: [
             "img/interests/tech1.jpg",
             "img/interests/tech2.jpg",
+            "img/interests/tech3.jpg",
         ],
     },
     {

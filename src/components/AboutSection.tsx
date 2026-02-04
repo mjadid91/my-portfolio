@@ -1,91 +1,98 @@
 import React from 'react';
-import { MapPin, Globe } from 'lucide-react';
-import { Linkedin, Github, Mail, Phone } from 'lucide-react';
+import { MapPin, Globe, Linkedin, Github, Mail, Phone } from 'lucide-react';
+
+interface Skill {
+    name: string;
+    level: number;
+    icon?: string;
+}
 
 const AboutSection: React.FC = () => {
-    const skills = {
+
+    const skills: {
+        frontend: Skill[];
+        backend: Skill[];
+        database: Skill[];
+        other: Skill[];
+    } = {
         frontend: [
-            { name: 'HTML / CSS', level: 95 },
-            { name: 'JavaScript', level: 80 },
-            { name: 'Bootstrap', level: 75 },
-            { name: 'React', level: 65 },
-            { name: 'TailwindCSS', level: 80 },
+            { name: 'HTML / CSS', level: 95, icon: 'devicon-html5-plain colored' },
+            { name: 'JavaScript', level: 80, icon: 'devicon-javascript-plain colored' },
+            { name: 'Bootstrap', level: 80, icon: 'devicon-bootstrap-plain colored' },
+            { name: 'React', level: 65, icon: 'devicon-react-original colored' },
+            { name: 'TailwindCSS', level: 70, icon: 'devicon-tailwindcss-plain colored' },
         ],
         backend: [
-            { name: 'Java SE/EE ', level: 90 },
-            { name: 'Java Spring Boot', level: 70 },
-            { name: 'PHP', level: 80 },
-            { name: 'Node.js', level: 65 },
-            { name: 'Python · Django', level: 70 },
-            { name: 'C / C++ / C#', level: 70 },
+            { name: 'Java SE / EE', level: 90, icon: 'devicon-java-plain colored' },
+            { name: 'Spring Boot', level: 70, icon: 'devicon-spring-plain colored' },
+            { name: 'PHP', level: 80, icon: 'devicon-php-plain colored' },
+            { name: 'Node.js', level: 65, icon: 'devicon-nodejs-plain colored' },
+            { name: 'Python / Django', level: 80, icon: 'devicon-python-plain colored' },
+            { name: 'C / C++ / C#', level: 80, icon: 'devicon-cplusplus-plain colored' },
         ],
         database: [
-            { name: 'SQL · MySQL · PostgreSQL', level: 90 },
+            { name: 'MySQL / PostgreSQL / SQL', level: 90, icon: 'devicon-postgresql-plain colored' },
         ],
         other: [
-            { name: 'Git', level: 85 },
-            { name: 'Docker · Kubernetes', level: 60 },
-            { name: 'GDScript', level: 70 },
-            { name: 'Sparql · Wikidata', level: 60 },
-        ]
+            { name: 'Git', level: 85, icon: 'devicon-git-plain colored' },
+            { name: 'Docker', level: 60, icon: 'devicon-docker-plain colored' },
+            { name: 'Kubernetes', level: 70, icon: 'devicon-kubernetes-plain colored' },
+            { name: 'GDScript (Godot)', level: 70, icon: 'devicon-godot-plain colored' },
+            { name: 'SPARQL / Wikidata', level: 60, icon: 'devicon-graphql-plain colored' },
+        ],
     };
 
     const tools = [
-        'GitLab','GitHub','IntelliJ','DBeaver','WebStorm','PyCharm',
-        'Visual Studio Code','Android Studio','Godot','Visual Paradigm',
-        'Figma','Windev','Postman','Supabase','Unity','Jira', 'GraphDB',
+        { name: 'GitHub', icon: 'devicon-github-original' },
+        { name: 'GitLab', icon: 'devicon-gitlab-plain' },
+        { name: 'IntelliJ', icon: 'devicon-intellij-plain' },
+        { name: 'WebStorm', icon: 'devicon-webstorm-plain' },
+        { name: 'PyCharm', icon: 'devicon-pycharm-plain' },
+        { name: 'VS Code', icon: 'devicon-vscode-plain' },
+        { name: 'Android Studio', icon: 'devicon-androidstudio-plain' },
+        { name: 'Postman', icon: 'devicon-postman-plain' },
+        { name: 'Figma', icon: 'devicon-figma-plain' },
+        { name: 'Unity', icon: 'devicon-unity-plain' },
+        { name: 'Jira', icon: 'devicon-jira-plain' },
     ];
 
     const softSkills = [
-        'Communication','Adaptabilité','Ponctualité','Rigueur',
-        'Résolution de problèmes','Travail en équipe','Environnement professionnel'
+        { label: 'Communication claire', icon: '💬' },
+        { label: 'Travail en équipe', icon: '🤝' },
+        { label: 'Rigueur & sens du détail', icon: '🎯' },
+        { label: 'Autonomie', icon: '🚀' },
+        { label: 'Adaptabilité', icon: '🔄' },
+        { label: 'Résolution de problèmes', icon: '🧠' },
+        { label: 'Organisation & gestion du temps', icon: '⏱️' },
     ];
 
-    const education = [
-        {
-            year: '2021 – 2026',
-            title: 'BUT Informatique',
-            institution: "IUT d'Orsay",
-            description: 'Formation complète en développement logiciel et technologies web',
-            website: 'http://www.iut-orsay.universite-paris-saclay.fr/',
-            address: '13 Avenue des Sciences, 91190 Gif-sur-Yvette',
-            image: 'img/education/iut.jpg'
-        },
-        {
-            year: '2019 – 2021',
-            title: 'STI2D (Sciences et Technologies de l’Industrie et du Développement Durable)',
-            institution: "Lycée de l'Essouriau",
-            description: 'Sciences et Technologies de l’Industrie et du Développement Durable',
-            website: 'https://lyceedelessouriau.fr/',
-            address: 'Avenue de Dordogne, 91940 Les Ulis',
-            image: 'img/education/essouriau.jpg'
-        },
-        {
-            year: '2018 – 2019',
-            title: 'Seconde Générale et Technologique',
-            institution: 'Lycée de la Vallée de Chevreuse',
-            description: 'Option Physique Chimie en laboratoire',
-            website: 'https://lyc-chevreuse-gif.ac-versailles.fr/',
-            address: '8 Rue de Madrid, 91190 Gif-sur-Yvette',
-            image: 'img/education/lvc.jpg'
-        }
-    ];
+    const renderSkillSection = (title: string, skills: Skill[]) => (
+        <div className="mb-10">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                {title}
+            </h3>
 
-    const renderSkillSection = (title: string, skillArray: {name: string, level: number}[]) => (
-        <div className="mb-6">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">{title}</h3>
-            <div className="space-y-4">
-                {skillArray.map((skill, index) => (
+            <div className="space-y-5">
+                {skills.map((skill, index) => (
                     <div key={skill.name}>
-                        <div className="flex justify-between mb-1 text-gray-700 dark:text-gray-300 font-medium">
-                            <span>{skill.name}</span>
-                            <span>{skill.level}%</span>
+                        <div className="flex items-center justify-between mb-1">
+                            <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300 font-medium">
+                                {skill.icon && <i className={`${skill.icon} text-xl`} />}
+                                <span>{skill.name}</span>
+                            </div>
+                            <span className="text-sm font-semibold text-gray-500">
+                                {skill.level}%
+                            </span>
                         </div>
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+
+                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
                             <div
-                                className="bg-gradient-to-r from-sky-500 to-blue-700 h-3 rounded-full transition-all duration-1000 ease-out"
-                                style={{ width: `${skill.level}%`, animationDelay: `${index * 0.1}s` }}
-                            ></div>
+                                className="bg-gradient-to-r from-sky-500 to-blue-600 h-3 rounded-full transition-all duration-1000 ease-out"
+                                style={{
+                                    width: `${skill.level}%`,
+                                    animationDelay: `${index * 0.1}s`,
+                                }}
+                            />
                         </div>
                     </div>
                 ))}
@@ -96,168 +103,91 @@ const AboutSection: React.FC = () => {
     return (
         <section id="about" className="py-20 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-6">
-                {/* Intro */}
-                <div className="text-center mb-16">
+
+                {/* INTRO */}
+                <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
                         À propos de moi
                     </h2>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-                        Je suis un étudiant passionné par la création de sites et d'applications web.
-                        Spécialisé en front-end et back-end, j'ai une bonne maîtrise des technologies modernes.
+
+                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
+                        Étudiant en informatique passionné par le développement web et logiciel.
+                        J’aime concevoir des applications propres, performantes et bien pensées.
                         <br />
-                        <span className="font-semibold text-blue-800 dark:text-blue-300">
-              Actuellement, je suis à la recherche d'un stage dans le développement d'une durée de 16 semaines à partir du 19 janvier 2026 pour valider mon BUT.
-            </span>
+                        <span className="font-semibold text-blue-700 dark:text-blue-400">
+                            Recherche d’un stage de 16 semaines à partir de janvier 2026.
+                        </span>
                     </p>
 
-                    {/* Contact */}
-                    <div className="flex justify-center space-x-2 mb-12">
-                        <a href="https://linkedin.com" className="flex items-center text-blue-600 hover:text-blue-800 transition-colors">
-                            <Linkedin className="w-5 h-5 mr-2" /> LinkedIn
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <a href="https://linkedin.com" className="flex items-center gap-2 text-blue-600 hover:underline">
+                            <Linkedin size={18} /> LinkedIn
                         </a>
-                        <a href="https://github.com/mjadid91/" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-                            <Github className="w-5 h-5 mr-2" /> GitHub
+                        <a href="https://github.com/mjadid91" className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:underline">
+                            <Github size={18} /> GitHub
                         </a>
-                        <a href="mailto:med.jadid@hotmail.com" className="flex items-center text-green-600 hover:text-green-800 transition-colors">
-                            <Mail className="w-5 h-5 mr-2" /> Email
+                        <a href="mailto:med.jadid@hotmail.com" className="flex items-center gap-2 text-green-600 hover:underline">
+                            <Mail size={18} /> Email
                         </a>
-                        <a href="tel:+33613650602" className="flex items-center text-purple-600 hover:text-purple-800 transition-colors">
-                            <Phone className="w-5 h-5 mr-2" /> Téléphone
+                        <a href="tel:+33613650602" className="flex items-center gap-2 text-purple-600 hover:underline">
+                            <Phone size={18} /> Téléphone
                         </a>
                     </div>
                 </div>
 
-                {/* Skills + Tools */}
-                <div className="grid md:grid-cols-2 gap-12 mb-16">
-                    {/* Colonne gauche : Frontend + Backend */}
+                {/* SKILLS */}
+                <div className="grid md:grid-cols-2 gap-16 mb-20">
                     <div>
                         {renderSkillSection('💻 Frontend', skills.frontend)}
-                        {renderSkillSection('💻 Backend', skills.backend)}
-                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">🧠 Compétences générales</h3>
-                        <div className="grid grid-cols-2 gap-3">
-                            {softSkills.map((skill) => (
+                        {renderSkillSection('🧠 Backend', skills.backend)}
+
+                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                            🤝 Soft skills
+                        </h3>
+
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            {softSkills.map(skill => (
                                 <div
-                                    key={skill}
-                                    className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-3 text-center text-gray-700 dark:text-gray-300 border border-blue-100 dark:border-blue-800"
-                                >
-                                    {skill}
+                                    key={skill.label}
+                                    className="group relative overflow-hidden rounded-xl p-4 text-center bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                                    <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">
+                                        {skill.icon}
+                                    </div>
+
+                                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                        {skill.label}
+                                    </span>
+                                    {/* Glow subtil */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
+                                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10" />
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Colonne droite : Database + Autres + Outils + Soft Skills */}
                     <div>
                         {renderSkillSection('🗄️ Base de données', skills.database)}
                         {renderSkillSection('⚙️ Autres compétences', skills.other)}
 
-                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">🧰 Outils</h3>
-                        <div className="grid grid-cols-2 gap-3 mb-8">
-                            {tools.map((tool) => (
+                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                            🧰 Outils
+                        </h3>
+                        <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
+                            {tools.map(tool => (
                                 <div
-                                    key={tool}
-                                    className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                                    key={tool.name}
+                                    className="group bg-gray-50 dark:bg-gray-800 rounded-xl p-4 flex flex-col items-center gap-2 hover:shadow-lg transition"
                                 >
-                                    {tool}
+                                    <i className={`${tool.icon} text-4xl group-hover:scale-110 transition-transform`} />
+                                    <span className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                                        {tool.name}
+                                    </span>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
-
-                {/* Education */}
-                <div>
-                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-12 text-center">
-                        🎓 Parcours scolaire
-                    </h3>
-
-                    <div className="max-w-4xl mx-auto relative">
-                        {/* Timeline */}
-                        <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 to-purple-600"></div>
-
-                        {education.map((item, index) => (
-                            <div
-                                key={index}
-                                className={`relative flex items-center mb-12 ${
-                                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                                }`}
-                            >
-                                {/* Point timeline */}
-                                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
-
-                                <div
-                                    className={`ml-12 md:ml-0 md:w-1/2 ${
-                                        index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
-                                    }`}
-                                >
-                                    {/* Card */}
-                                    <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-
-                                        {/* Image */}
-                                        {item.image && (
-                                            <div className="h-56 w-full overflow-hidden group">
-                                                <img
-                                                    src={item.image}
-                                                    alt={item.institution}
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                                />
-                                            </div>
-                                        )}
-
-                                        {/* Content */}
-                                        <div className="p-6">
-                                            <div className="text-blue-600 dark:text-blue-400 font-semibold mb-2">
-                                                {item.year}
-                                            </div>
-
-                                            <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
-                                                {item.title} - {item.institution}
-                                            </h4>
-
-                                            {item.institution && (
-                                                <div className="flex items-center text-gray-600 dark:text-gray-400 font-medium mb-1">
-                                                    <MapPin className="w-4 h-4 mr-1" />
-                                                    {item.address ? (
-                                                        <a
-                                                            href={`https://maps.google.com/?q=${encodeURIComponent(item.address)}`}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="underline hover:text-blue-500 dark:hover:text-blue-300"
-                                                        >
-                                                            {item.address}
-                                                        </a>
-                                                    ) : (
-                                                        item.institution
-                                                    )}
-                                                </div>
-                                            )}
-
-                                            {item.website && (
-                                                <div className="flex items-center text-blue-500 dark:text-blue-300 mb-3">
-                                                    <Globe className="w-4 h-4 mr-1" />
-                                                    <a
-                                                        href={item.website}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="underline hover:text-blue-700 dark:hover:text-blue-100"
-                                                    >
-                                                        Site officiel
-                                                    </a>
-                                                </div>
-                                            )}
-
-                                            <p className="text-gray-600 dark:text-gray-300">
-                                                {item.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-
             </div>
         </section>
     );
