@@ -20,7 +20,6 @@ const interests: Interest[] = [
         description: "Esprit d’équipe, discipline et goût de la compétition.",
         images: [
             "img/interests/football1.jpg",
-            "img/interests/football2.jpg",
         ],
     },
     {
@@ -44,7 +43,6 @@ const interests: Interest[] = [
         title: "Voyages",
         description: "Découverte de nouvelles cultures et horizons à travers le monde.",
         images: [
-            "img/interests/voyage1.jpg",
             "img/interests/voyage2.jpg",
             "img/interests/voyage3.jpg"
         ],
