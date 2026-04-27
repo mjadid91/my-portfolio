@@ -1,50 +1,47 @@
-
-import React, { useState, useEffect } from 'react';
-import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
-import InterestsSection from "@/components/InterestsSection.tsx";
+import React, { useEffect, useState } from "react";
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import InterestsSection from "@/components/InterestsSection";
+import ExperienceSection from "@/components/ExperienceSection.tsx";
+import ParcoursSection from "@/components/ParcoursSection.tsx";
 
 const Index = () => {
-  const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
-  useEffect(() => {
-    // Check for saved dark mode preference
-    const savedDarkMode = localStorage.getItem('darkMode');
-    if (savedDarkMode) {
-      setDarkMode(JSON.parse(savedDarkMode));
-    }
-  }, []);
+    useEffect(() => {
+        const savedDarkMode = localStorage.getItem("darkMode");
 
-  useEffect(() => {
-    // Apply dark mode class to document
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    // Save dark mode preference
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-  }, [darkMode]);
+        if (savedDarkMode !== null) {
+            setDarkMode(JSON.parse(savedDarkMode));
+        }
+    }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+    useEffect(() => {
+        document.documentElement.classList.toggle("dark", darkMode);
+        localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    }, [darkMode]);
 
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <InterestsSection />
-      <ContactSection />
-      <Footer />
-    </div>
-  );
+    const toggleDarkMode = () => {
+        setDarkMode((prev) => !prev);
+    };
+
+    return (
+        <div className="page-shell transition-colors duration-300">
+            <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <HeroSection />
+            <AboutSection />
+            <ProjectsSection />
+            <InterestsSection />
+            <ExperienceSection />
+            <ParcoursSection />
+            <ContactSection />
+            <Footer />
+        </div>
+    );
 };
 
 export default Index;

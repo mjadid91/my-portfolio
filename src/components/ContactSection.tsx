@@ -1,228 +1,227 @@
+import React, { useState } from "react";
+import { Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
-import React, { useState } from 'react';
-import { Send, MapPin, Mail, Phone } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
+const inputClass =
+    "w-full rounded-2xl border border-border bg-card/70 px-4 py-3 text-foreground outline-none transition placeholder:text-muted-foreground focus:border-primary/50 focus:bg-card focus:ring-4 focus:ring-primary/10 dark:border-white/10 dark:bg-white/[0.04] dark:focus:bg-white/[0.07]";
 
 const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
     });
-  };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const { toast } = useToast();
 
-    try {
-      const templateParams = {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: 'Mohamed',
-        time: new Date().toLocaleString('fr-FR', {
-          dateStyle: 'full',
-          timeStyle: 'short',
-        }),
-      };
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
 
-      await emailjs.send(
-          'service_oeyrcfy',
-          'template_m7zpa3f',
-          templateParams,
-          'rgb_j_ayHFfKRn1q1'
-      );
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
 
-      toast({
-        title: "Message envoyé !",
-        description: "Merci pour votre message. Je vous répondrai rapidement.",
-      });
+        try {
+            await emailjs.send(
+                "service_oeyrcfy",
+                "template_m7zpa3f",
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    to_name: "Mohamed",
+                    time: new Date().toLocaleString("fr-FR", {
+                        dateStyle: "full",
+                        timeStyle: "short",
+                    }),
+                },
+                "rgb_j_ayHFfKRn1q1"
+            );
 
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Erreur EmailJS:', error);
-      toast({
-        title: "Erreur",
-        description: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+            toast({
+                title: "Message envoyé !",
+                description: "Merci pour votre message. Je vous répondrai rapidement.",
+            });
 
+            setFormData({ name: "", email: "", subject: "", message: "" });
+        } catch (error) {
+            console.error(error);
 
-  return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
-            📩 Contactez-moi
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Une question ? Un projet en tête ? N'hésitez pas à me contacter !
-          </p>
-        </div>
+            toast({
+                title: "Erreur",
+                description: "Le message n’a pas pu être envoyé. Réessayez plus tard.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-                Informations de contact
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
-                Je suis toujours ravi de discuter de nouveaux projets et d'opportunités passionnantes.
-              </p>
+    return (
+        <section id="contact" className="section-padding relative overflow-hidden bg-background">
+            <div className="absolute inset-0 bg-grid opacity-20" />
+            <div className="absolute left-[-140px] top-24 h-[360px] w-[360px] rounded-full bg-primary/10 blur-[120px]" />
+            <div className="absolute bottom-[-120px] right-[-120px] h-[420px] w-[420px] rounded-full bg-accent/10 blur-[140px]" />
+
+            <div className="container-premium relative z-10">
+                <div className="mx-auto mb-16 max-w-3xl text-center">
+                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-sm text-muted-foreground backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04]">
+                        <Sparkles className="h-4 w-4 text-primary" />
+                        Contact
+                    </div>
+
+                    <h2 className="text-balance text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+                        Un projet, une alternance ou une opportunité ?
+                    </h2>
+
+                    <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                        Envoyez-moi un message, je vous répondrai dès que possible.
+                    </p>
+                </div>
+
+                <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+                    <div className="premium-card p-7">
+                        <h3 className="mb-4 text-2xl font-black text-foreground">
+                            Informations
+                        </h3>
+
+                        <p className="mb-8 leading-7 text-muted-foreground">
+                            Je suis disponible pour discuter d’un projet web, d’une
+                            opportunité de stage, d’alternance ou d’une collaboration.
+                        </p>
+
+                        <div className="space-y-4">
+                            {[
+                                {
+                                    href: "mailto:med.jadid@hotmail.com",
+                                    icon: <Mail className="h-5 w-5" />,
+                                    title: "Email",
+                                    value: "med.jadid@hotmail.com",
+                                },
+                                {
+                                    href: "tel:+33613650602",
+                                    icon: <Phone className="h-5 w-5" />,
+                                    title: "Téléphone",
+                                    value: "+33 6 13 65 06 02",
+                                },
+                            ].map((item) => (
+                                <a
+                                    key={item.title}
+                                    href={item.href}
+                                    className="flex items-center gap-4 rounded-2xl border border-border bg-card/70 p-4 text-muted-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.04] dark:hover:text-white"
+                                >
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                                        {item.icon}
+                                    </div>
+                                    <div>
+                                        <p className="font-semibold text-foreground">{item.title}</p>
+                                        <p className="text-sm text-muted-foreground">{item.value}</p>
+                                    </div>
+                                </a>
+                            ))}
+
+                            <div className="flex items-center gap-4 rounded-2xl border border-border bg-card/70 p-4 text-muted-foreground dark:border-white/10 dark:bg-white/[0.04]">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                                    <MapPin className="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <p className="font-semibold text-foreground">Localisation</p>
+                                    <p className="text-sm text-muted-foreground">
+                                        Île-de-France, France
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="premium-card p-7">
+                        <div className="grid gap-5 md:grid-cols-2">
+                            <div>
+                                <label className="mb-2 block text-sm font-semibold text-foreground">
+                                    Nom *
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Votre nom"
+                                    className={inputClass}
+                                />
+                            </div>
+
+                            <div>
+                                <label className="mb-2 block text-sm font-semibold text-foreground">
+                                    Email *
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="votre.email@example.com"
+                                    className={inputClass}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="mt-5">
+                            <label className="mb-2 block text-sm font-semibold text-foreground">
+                                Objet *
+                            </label>
+                            <input
+                                type="text"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                required
+                                placeholder="Sujet du message"
+                                className={inputClass}
+                            />
+                        </div>
+
+                        <div className="mt-5">
+                            <label className="mb-2 block text-sm font-semibold text-foreground">
+                                Message *
+                            </label>
+                            <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                                rows={7}
+                                placeholder="Votre message..."
+                                className={`${inputClass} resize-none`}
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="premium-button mt-6 w-full disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+                            {isSubmitting ? (
+                                <span className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
+                            ) : (
+                                <Send className="mr-2 h-5 w-5" />
+                            )}
+
+                            {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
+                        </button>
+                    </form>
+                </div>
             </div>
-
-            <div className="space-y-6">
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
-                  <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white">Email</h4>
-                  <p className="text-gray-600 dark:text-gray-300">med.jadid@hotmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-4">
-                  <Phone className="w-6 h-6 text-green-600 dark:text-green-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white">Téléphone</h4>
-                  <p className="text-gray-600 dark:text-gray-300">+33 6 13 65 06 02</p>
-                </div>
-              </div>
-
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-4">
-                  <MapPin className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white">Localisation</h4>
-                  <p className="text-gray-600 dark:text-gray-300">Île-de-France, France</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Disponibilité */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6 border border-blue-100 dark:border-blue-800">
-              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">
-                💼 Disponibilité
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300">
-                Actuellement ouvert aux opportunités de stage et aux projets freelance.
-              </p>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Nom *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="Votre nom"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="votre.email@example.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Objet *
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                  placeholder="Sujet de votre message"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
-                  placeholder="Votre message..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-sky-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-              >
-                {isSubmitting ? (
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                ) : (
-                  <Send className="w-5 h-5 mr-2" />
-                )}
-                {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default ContactSection;

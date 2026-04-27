@@ -1,177 +1,294 @@
-import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import React from "react";
+import { ArrowRight, ExternalLink, Github, Sparkles } from "lucide-react";
+
+type Project = {
+    id: number;
+    title: string;
+    context: string;
+    description: string;
+    image: string;
+    technologies: string[];
+    demoLink?: string;
+    codeLink?: string;
+    featured?: boolean;
+};
 
 const ProjectsSection: React.FC = () => {
-    const projects = [
+    const projects: Project[] = [
         {
             id: 1,
-            title: 'My Pizza',
-            context: 'Projet BUT 2',
-            description: 'Application de commande de pizzas avec interface intuitive et gestion complète des commandes et des stocks.',
-            image: 'img/projets/projet1.jpg',
-            technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Java Swing'],
-            demoLink: '#',
-            codeLink: 'https://github.com/mjadid91/MaPizza'
+            title: "AppSeniors",
+            context: "Projet de stage — Application web complète",
+            description:
+                "Plateforme de mise en relation entre seniors, aidants et tuteurs : authentification, profils, demandes d’aide, réservations, paiements, évaluations et support.",
+            image: "img/projets/optimized/appseniors.webp",
+            technologies: ["React", "TypeScript", "TailwindCSS", "Supabase", "PostgreSQL"],
+            featured: true,
         },
         {
             id: 2,
-            title: 'Démocratie Participative',
-            context: 'Projet BUT 2',
-            description: 'Plateforme sécurisée de vote en ligne permettant aux citoyens de participer aux décisions publiques.',
-            image: 'img/projets/projet2.jpg',
-            technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Java Swing'],
-            demoLink: '#',
-            codeLink: 'https://github.com/mjadid91/Democratie-Participative-App'
+            title: "Application de gestion interne",
+            context: "Stage S4",
+            description:
+                "Application CRM interne sécurisée : interface moderne, gestion des clients et données, tableaux de bord, suivi des performances et accès sécurisé (React, Node.js, PostgreSQL, Supabase).",
+            image: "img/projets/optimized/crm.webp",
+            technologies: ["React", "Node.js", "Vite", "PostgreSQL", "Supabase"],
+            featured: true,
         },
         {
             id: 3,
-            title: 'Calculis : La grande Évasion',
-            context: 'Projet BUT 2',
-            description: 'Jeu 2D avec aventures, ennemis et énigmes mathématiques amusantes.',
-            image: 'img/projets/projet3.jpg',
-            technologies: ['Godot', 'GDScript', 'Game Design'],
-            demoLink: '#',
-            codeLink: 'https://github.com/mjadid91/Calculis-Escape-Game'
+            title: "AppContact",
+            context: "Stage S4",
+            description:
+                "Application de gestion de contacts avec interface moderne, opérations CRUD et organisation des données.",
+            image: "img/projets/optimized/appcontact.webp",
+            technologies: ["React", "TypeScript", "Tailwind", "Node.js"],
+            codeLink: "https://github.com/mjadid91/AppContact",
         },
         {
             id: 4,
-            title: 'AppContact - Gestion de contacts',
-            context: 'Stage S4',
-            description: 'Application de gestion de contacts avec interface moderne et fonctionnalités CRUD, développée lors de mon stage.',
-            image: 'img/projets/projet4.jpg',
-            technologies: ['React', 'Node.js', 'TypeScript', 'Tailwind CSS', 'WinDev (HFSQL)'],
-            demoLink: '#',
-            codeLink: 'https://github.com/mjadid91/AppContact'
+            title: "WebStage",
+            context: "Mini-projet BUT 3",
+            description:
+                "Application web de gestion d’offres de stage, candidatures étudiantes et suivi administratif.",
+            image: "img/projets/optimized/webstage.webp",
+            technologies: ["Django", "Python", "SQLite", "HTML", "CSS"],
+            codeLink: "https://github.com/mjadid91/webstage-django",
         },
         {
             id: 5,
-            title: 'Application de gestion interne',
-            context: 'Stage S4',
-            description: 'Développement d’une application CRM interne sécurisée, avec interface web moderne et gestion complète des données.',
-            image: 'img/projets/projet5.jpg',
-            technologies: ['React', 'Node.js', 'Vite.js', 'PostgreSQL', 'Tailwind CSS', 'Supabase'],
-            demoLink: '',
-            codeLink: ''
+            title: "WebTravel",
+            context: "Mini-projet BUT 3",
+            description:
+                "Application web de gestion de voyages, villes, étapes de parcours et panier de commande.",
+            image: "img/projets/optimized/webtravel.webp",
+            technologies: ["Django", "Python", "SQLite", "JavaScript"],
+            codeLink: "https://github.com/mjadid91/webtravel-django",
         },
         {
             id: 6,
-            title: 'Application de gestion de stages',
-            context: 'Mini-projet BUT 3',
-            description: "Application web permettant de gérer des offres de stage, les candidatures des étudiants et le suivi administratif, avec une interface claire et fonctionnelle.",
-            image: 'img/projets/projet6.jpg',
-            technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
-            demoLink: '',
-            codeLink: 'https://github.com/mjadid91/webstage-django'
+            title: "Calculis : La grande Évasion",
+            context: "Projet BUT 2",
+            description:
+                "Jeu 2D développé sous Godot avec exploration, ennemis et énigmes mathématiques.",
+            image: "img/projets/optimized/calculis.webp",
+            technologies: ["Godot", "GDScript", "Game Design"],
+            codeLink: "https://github.com/mjadid91/Calculis-Escape-Game",
         },
         {
             id: 7,
-            title: 'Application de gestion de voyages',
-            context: 'Mini-projet BUT 3',
-            description: "Application web dédiée à la gestion des voyages, des villes et des étapes de parcours, intégrant un système de panier de commande et une interface claire, intuitive et fonctionnelle.",
-            image: 'img/projets/projet7.jpg',
-            technologies: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'DBSQLite'],
-            demoLink: '',
-            codeLink: 'https://github.com/mjadid91/webtravel-django'
+            title: "Démocratie Participative",
+            context: "Projet BUT 2",
+            description:
+                "Plateforme de vote en ligne pensée pour permettre une participation citoyenne sécurisée.",
+            image: "img/projets/optimized/democratie.webp",
+            technologies: ["HTML", "CSS", "JavaScript", "PHP", "Java"],
+            codeLink: "https://github.com/mjadid91/Democratie-Participative-App",
         },
         {
             id: 8,
-            title: 'Jeux vidéo Roguelike en 3D',
-            context: 'Grand projet BUT 3',
-            description: "Roguelike 3D médiéval sous Unity : exploration de donjons, combats en temps réel, ennemis et boss. Projet d’équipe mené sur un semestre avec focus gameplay et code propre.",
-            image: 'img/projets/projet8.jpg',
-            technologies: ['C#', 'Unity', 'Game Design'],
-            demoLink: '',
-            codeLink: ''
-        }
+            title: "My Pizza",
+            context: "Projet BUT 2",
+            description:
+                "Application de commande de pizzas avec gestion des commandes, produits et stocks.",
+            image: "img/projets/optimized/pizza.webp",
+            technologies: ["HTML", "CSS", "JavaScript", "PHP", "Java"],
+            codeLink: "https://github.com/mjadid91/MaPizza",
+        },
+        {
+            id: 9,
+            title: "Roguelike 3D",
+            context: "Grand projet BUT 3",
+            description:
+                "Jeu 3D médiéval sous Unity : exploration de donjons, combats en temps réel, ennemis et boss.",
+            image: "img/projets/optimized/roguelike.webp",
+            technologies: ["Unity", "C#", "Game Design"],
+        },
     ];
 
+    const featuredProjects = projects.filter((project) => project.featured);
+    const secondaryProjects = projects.filter((project) => !project.featured);
+
     return (
-        <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
-                        🚀 Mes projets vedettes
+        <section id="projects" className="section-padding relative overflow-hidden bg-background">
+            <div className="absolute inset-0 bg-grid opacity-20" />
+            <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
+
+            <div className="container-premium relative z-10">
+                <div className="mx-auto mb-16 max-w-3xl text-center">
+                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-sm text-muted-foreground backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04]">
+                        <Sparkles className="h-4 w-4 text-primary" />
+                        Projets
+                    </div>
+
+                    <h2 className="text-balance text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+                        Des projets concrets, pensés comme de vrais produits.
                     </h2>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        Découvrez une sélection de mes réalisations, alliant créativité et technologies modernes.
+
+                    <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                        Une sélection de réalisations développées en cours, en stage et sur
+                        des projets personnels, avec un focus sur l’interface, la logique
+                        métier et la qualité du code.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
-                    {projects.map((project) => (
-                        <div
+                <div className="grid gap-7 lg:grid-cols-2">
+                    {featuredProjects.map((project) => (
+                        <article
                             key={project.id}
-                            className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+                            className="premium-card group overflow-hidden transition duration-300 hover:-translate-y-2"
                         >
-                            {/* Project Image */}
-                            <div className="relative overflow-hidden">
+                            <div className="relative h-72 overflow-hidden">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-[21rem] object-cover group-hover:scale-110 transition-transform duration-300"
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div className="absolute bottom-4 left-4 right-4 flex space-x-2">
-                                        {project.demoLink && (
-                                            <a
-                                                href={project.demoLink}
-                                                className="flex items-center px-3 py-1 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors"
-                                            >
-                                                <ExternalLink className="w-4 h-4 mr-1" />
-                                                Demo
-                                            </a>
-                                        )}
-                                        {project.codeLink && (
-                                            <a
-                                                href={project.codeLink}
-                                                className="flex items-center px-3 py-1 bg-gray-800 text-white rounded-lg text-sm hover:bg-gray-900 transition-colors"
-                                            >
-                                                <Github className="w-4 h-4 mr-1" />
-                                                Code
-                                            </a>
-                                        )}
-                                    </div>
+
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+
+                                <div className="absolute left-5 top-5 rounded-full border border-primary/30 bg-primary/15 px-4 py-2 text-sm font-semibold text-primary backdrop-blur-xl">
+                                    Projet phare
                                 </div>
                             </div>
 
-                            {/* Project Content */}
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
-                                    {project.title}
-                                </h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            <div className="p-7">
+                                <p className="mb-2 text-sm font-medium text-primary">
                                     {project.context}
                                 </p>
-                                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-base">
+
+                                <h3 className="text-2xl font-black text-foreground">
+                                    {project.title}
+                                </h3>
+
+                                <p className="mt-4 leading-7 text-muted-foreground">
                                     {project.description}
                                 </p>
 
-                                {/* Technologies */}
-                                <div className="flex flex-wrap gap-2">
+                                <div className="mt-6 flex flex-wrap gap-2">
                                     {project.technologies.map((tech) => (
                                         <span
                                             key={tech}
-                                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
-                                        > {tech}
-                                        </span>
+                                            className="rounded-full border border-border bg-card/70 px-3 py-1.5 text-sm font-medium text-muted-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.05] dark:hover:text-white"
+                                        >
+                      {tech}
+                    </span>
                                     ))}
                                 </div>
+
+                                <div className="mt-7 flex flex-wrap gap-3">
+                                    {project.demoLink && (
+                                        <a
+                                            href={project.demoLink}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="premium-button"
+                                        >
+                                            Voir le projet
+                                            <ExternalLink className="ml-2 h-4 w-4" />
+                                        </a>
+                                    )}
+
+                                    {project.codeLink && (
+                                        <a
+                                            href={project.codeLink}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="premium-button-outline"
+                                        >
+                                            <Github className="mr-2 h-4 w-4" />
+                                            Code source
+                                        </a>
+                                    )}
+                                </div>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
 
-                {/* Call to action */}
-                <div className="text-center mt-12">
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                        Envie de voir plus de projets ?
-                    </p>
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {secondaryProjects.map((project) => (
+                        <article
+                            key={project.id}
+                            className="premium-card group overflow-hidden transition duration-300 hover:-translate-y-2"
+                        >
+                            <div className="relative h-56 overflow-hidden">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-110"
+                                />
+
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
+                            </div>
+
+                            <div className="p-6">
+                                <p className="mb-2 text-sm font-medium text-primary">
+                                    {project.context}
+                                </p>
+
+                                <h3 className="text-xl font-black text-foreground">
+                                    {project.title}
+                                </h3>
+
+                                <p className="mt-3 line-clamp-3 leading-7 text-muted-foreground">
+                                    {project.description}
+                                </p>
+
+                                <div className="mt-5 flex flex-wrap gap-2">
+                                    {project.technologies.slice(0, 4).map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.05] dark:hover:text-white"
+                                        >
+                      {tech}
+                    </span>
+                                    ))}
+                                </div>
+
+                                <div className="mt-6 flex items-center gap-3">
+                                    {project.demoLink && (
+                                        <a
+                                            href={project.demoLink}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center text-sm font-semibold text-primary transition hover:text-blue-500 dark:hover:text-blue-300"
+                                        >
+                                            Demo
+                                            <ExternalLink className="ml-1 h-4 w-4" />
+                                        </a>
+                                    )}
+
+                                    {project.codeLink && (
+                                        <a
+                                            href={project.codeLink}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center text-sm font-semibold text-foreground transition hover:text-primary"
+                                        >
+                                            Code
+                                            <Github className="ml-1 h-4 w-4" />
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+
+                <div className="mt-14 text-center">
                     <a
                         href="https://github.com/mjadid91"
-                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-sky-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all duration-300 transform hover:scale-105"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="premium-button-outline"
                     >
-                        <Github className="w-5 h-5 mr-2" />
-                        Voir tous mes projets sur GitHub
+                        Voir plus sur GitHub
+                        <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                 </div>
             </div>

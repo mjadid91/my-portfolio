@@ -1,142 +1,162 @@
-
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 
 interface HeaderProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
 }
 
+const navItems = [
+  { label: "Accueil", id: "home" },
+  { label: "À propos", id: "about" },
+  { label: "Projets", id: "projects" },
+  { label: "Centres d'intérêt", id:"interests"},
+  { label: "Expériences", id: "experience" },
+  { label: "Contact", id: "contact" },
+];
+
 const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-lg' : 'bg-transparent'
-    }`}>
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">
-                Mohamed JADID
+      <header
+          className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+              isScrolled
+                  ? "border-b border-border bg-background/75 shadow-xl shadow-black/5 backdrop-blur-2xl dark:border-white/10 dark:shadow-black/20"
+                  : "bg-transparent"
+          }`}
+      >
+        <nav className="container-premium">
+          <div className="flex h-20 items-center justify-between">
+
+            {/* 🔥 LOGO */}
+            <button
+                onClick={() => scrollToSection("home")}
+                className="group flex items-center gap-3"
+                aria-label="Retour à l'accueil"
+            >
+              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-card/70 backdrop-blur shadow-lg shadow-black/10 transition duration-300 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:shadow-primary/20">
+
+                {/* glow effect */}
+                <div className="absolute inset-0 rounded-2xl bg-primary/0 blur-xl transition duration-300 group-hover:bg-primary/20" />
+
+                {/* logo */}
+                <img
+                    src={`${import.meta.env.BASE_URL}${
+                        darkMode
+                            ? "logo/logo-mj-dark.png"
+                            : "logo/logo-mj-removebg.png"
+                    }`}
+                    alt="Logo MJ"
+                    className="relative z-10 h-8 w-8 object-contain transition duration-300 group-hover:scale-110"
+                />
+              </div>
+
+              <div className="text-left leading-tight">
+                <p className="text-sm font-black uppercase tracking-[0.22em] text-foreground">
+                  MJ
+                </p>
+                <p className="hidden text-xs text-muted-foreground sm:block">
+                  Développeur web
+                </p>
+              </div>
+            </button>
+
+            {/* 🔥 NAV DESKTOP */}
+            <div className="hidden items-center gap-2 rounded-full border border-border bg-card/70 p-1 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] md:flex">
+              {navItems.map((item) => (
+                  <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-primary/10 hover:text-foreground dark:hover:bg-white/[0.06] dark:hover:text-white"
+                  >
+                    {item.label}
+                  </button>
+              ))}
             </div>
 
+            {/* 🔥 ACTIONS DESKTOP */}
+            <div className="hidden items-center gap-3 md:flex">
+              <button
+                  onClick={toggleDarkMode}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card/70 text-muted-foreground backdrop-blur-xl transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.04] dark:text-white/80 dark:hover:text-white"
+                  aria-label="Changer le thème"
+              >
+                {darkMode ? (
+                    <Sun className="h-5 w-5" />
+                ) : (
+                    <Moon className="h-5 w-5" />
+                )}
+              </button>
 
-            {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              Accueil
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              À propos de moi
-            </button>
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              Mes projets
-            </button>
-            <button
-                  onClick={() => scrollToSection('interests')}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-                Mes centres d'intérêt
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              Contact
-            </button>
-            
-            {/* Dark mode toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-          </div>
+              <button
+                  onClick={() => scrollToSection("contact")}
+                  className="premium-button px-5 py-2.5"
+              >
+                Me contacter
+              </button>
+            </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
-            >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
+            {/* 🔥 MOBILE */}
+            <div className="flex items-center gap-3 md:hidden">
+              <button
+                  onClick={toggleDarkMode}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card/70 text-muted-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.05] dark:text-white/80"
+              >
+                {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </button>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex flex-col space-y-4 pt-4">
               <button
-                onClick={() => scrollToSection('home')}
-                className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  onClick={() => setIsMenuOpen((prev) => !prev)}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card/70 text-muted-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.05] dark:text-white/80"
               >
-                Accueil
-              </button>
-              <button
-                onClick={() => scrollToSection('about')}
-                className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                À propos de moi
-              </button>
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                Mes projets
-              </button>
-              <button
-                  onClick={() => scrollToSection('projects')}
-                  className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                Mes centres d'intérêt
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                Contact
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
-        )}
-      </nav>
-    </header>
+
+          {/* 🔥 MENU MOBILE */}
+          {isMenuOpen && (
+              <div className="animate-fade-in-down pb-5 md:hidden">
+                <div className="premium-card p-3">
+                  <div className="flex flex-col gap-1">
+                    {navItems.map((item) => (
+                        <button
+                            key={item.id}
+                            onClick={() => scrollToSection(item.id)}
+                            className="rounded-2xl px-4 py-3 text-left text-sm font-medium text-muted-foreground transition hover:bg-primary/10 hover:text-foreground dark:hover:bg-white/[0.06] dark:hover:text-white"
+                        >
+                          {item.label}
+                        </button>
+                    ))}
+
+                    <button
+                        onClick={() => scrollToSection("contact")}
+                        className="mt-2 rounded-2xl bg-primary px-4 py-3 text-left text-sm font-bold text-primary-foreground"
+                    >
+                      Me contacter
+                    </button>
+                  </div>
+                </div>
+              </div>
+          )}
+        </nav>
+      </header>
   );
 };
 
