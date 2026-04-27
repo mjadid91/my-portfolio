@@ -60,7 +60,7 @@ const experiences: Experience[] = [
         logo: `${import.meta.env.BASE_URL}img/experiences/labssii.png`,
         location: "Évry",
         period: "Depuis Février 2026",
-        type: "Application métier complète",
+        type: "Stage développeur web",
         description:
             "Conception d’une application métier reliant seniors et aidants avec gestion des profils, réservations et services.",
         skills: ["React", "TypeScript", "Tailwind", "Supabase"],
