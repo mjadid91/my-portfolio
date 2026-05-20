@@ -31,7 +31,7 @@ const parcours: Parcours[] = [
         location: "Orsay / Gif-sur-Yvette",
         period: "Depuis septembre 2021",
         description:
-            "Formation orientée développement d’applications, conception, validation, bases de données, architecture logicielle et projets en équipe.",
+            "Parcours A : développement d’applications, conception, validation, bases de données, architecture logicielle et projets en équipe.",
         image: `${import.meta.env.BASE_URL}img/education/iut.jpg`,
         websiteUrl: "https://www.iut-orsay.universite-paris-saclay.fr/",
         mapsUrl:

@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import InterestsSection from "@/components/InterestsSection";
 import ExperienceSection from "@/components/ExperienceSection.tsx";
 import ParcoursSection from "@/components/ParcoursSection.tsx";
+import CurrentGoalSection from "@/components/CurrentGoalSection";
 
 const Index = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -33,6 +34,7 @@ const Index = () => {
         <div className="page-shell transition-colors duration-300">
             <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             <HeroSection />
+            <CurrentGoalSection />
             <AboutSection />
             <ProjectsSection />
             <InterestsSection />

@@ -1,8 +1,10 @@
 import React from "react";
 import { ArrowRight, ExternalLink, Github, Sparkles } from "lucide-react";
+import {Link} from "react-router-dom";
 
 type Project = {
     id: number;
+    slug?: string;
     title: string;
     context: string;
     description: string;
@@ -77,6 +79,7 @@ const ProjectsSection: React.FC = () => {
         },
         {
             id: 7,
+            slug: "democratie",
             title: "Démocratie Participative",
             context: "Projet BUT 2",
             description:
@@ -87,6 +90,7 @@ const ProjectsSection: React.FC = () => {
         },
         {
             id: 8,
+            slug: "pizza",
             title: "My Pizza",
             context: "Projet BUT 2",
             description:
@@ -104,6 +108,17 @@ const ProjectsSection: React.FC = () => {
             image: "img/projets/optimized/roguelike.webp",
             technologies: ["Unity", "C#", "Game Design"],
         },
+        {
+            id: 10,
+            title: "Projet RCW",
+            context: "Mini Projet BUT 3",
+            description:
+                "Projet d’analyse RDF des infractions routières avec Web sémantique et API Géo.",
+            image: "img/projets/optimized/rcw.webp",
+            technologies: ["HTML", "Python", "SPARQL", "Wikidata", "API Géo"],
+            codeLink: "https://github.com/mjadid91/projet_rcw.git",
+        },
+
     ];
 
     const featuredProjects = projects.filter((project) => project.featured);
@@ -173,8 +188,8 @@ const ProjectsSection: React.FC = () => {
                                             key={tech}
                                             className="rounded-full border border-border bg-card/70 px-3 py-1.5 text-sm font-medium text-muted-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.05] dark:hover:text-white"
                                         >
-                      {tech}
-                    </span>
+                                            {tech}
+                                        </span>
                                     ))}
                                 </div>
 
@@ -210,7 +225,8 @@ const ProjectsSection: React.FC = () => {
 
                 <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {secondaryProjects.map((project) => (
-                        <article
+                        <Link
+                            to={project.slug ? `/projets/${project.slug}` : ""}
                             key={project.id}
                             className="premium-card group overflow-hidden transition duration-300 hover:-translate-y-2"
                         >
@@ -276,13 +292,13 @@ const ProjectsSection: React.FC = () => {
                                     )}
                                 </div>
                             </div>
-                        </article>
+                        </Link>
                     ))}
                 </div>
 
                 <div className="mt-14 text-center">
                     <a
-                        href="https://github.com/mjadid91"
+                        href="https://github.com/mjadid91?tab=repositories"
                         target="_blank"
                         rel="noreferrer"
                         className="premium-button-outline"

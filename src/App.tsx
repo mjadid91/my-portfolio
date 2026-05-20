@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import ProjectDetailsPage from "@/pages/ProjectDetailsPage.tsx";
 
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const App = () => (
             <Sonner />
             <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/projets/:slug" element={<ProjectDetailsPage />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
                 {/* Toujours mettre la route * à la fin */}
