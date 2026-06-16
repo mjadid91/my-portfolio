@@ -22,7 +22,7 @@ export const projectsDetails: ProjectDetails[] = [
             "Application de commande de pizzas avec gestion des produits, commandes, ingrédients et interface web.",
         longDescription:
             "My Pizza est une plateforme de commande en ligne développée dans le cadre d’un projet universitaire. L’objectif était de créer une application complète permettant de consulter des pizzas, gérer un panier, passer une commande et administrer les produits et ingrédients.",
-        image: `${import.meta.env.BASE_URL}img/projets/pizza.webp`,
+        image: `${import.meta.env.BASE_URL}img/projets/optimized/pizza.webp`,
         demoVideo: `${import.meta.env.BASE_URL}img/projects-details/pizza/demo.mp4`,
         screenshots: [
             `${import.meta.env.BASE_URL}img/projects-details/pizza/screen1.webp`,
@@ -52,7 +52,7 @@ export const projectsDetails: ProjectDetails[] = [
             "Plateforme de vote en ligne permettant de proposer, consulter et voter pour des décisions collectives.",
         longDescription:
             "Démocratie Participative est une plateforme pensée pour faciliter la participation citoyenne. Le projet permet la gestion de groupes, propositions, commentaires et votes, avec une séparation des rôles et une logique de décision collective.",
-        image: `${import.meta.env.BASE_URL}img/projets/democratie.webp`,
+        image: `${import.meta.env.BASE_URL}img/projets/optimized/democratie.webp`,
         demoVideo: `${import.meta.env.BASE_URL}img/projects-details/democratie/demo.mp4`,
         screenshots: [
             `${import.meta.env.BASE_URL}img/projects-details/democratie/screen1.webp`,

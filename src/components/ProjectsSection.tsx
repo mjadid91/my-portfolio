@@ -118,6 +118,16 @@ const ProjectsSection: React.FC = () => {
             technologies: ["HTML", "Python", "SPARQL", "Wikidata", "API Géo"],
             codeLink: "https://github.com/mjadid91/projet_rcw.git",
         },
+        {
+            id: 11,
+            title: "Platformer 2D",
+            context: "Projet Unity — Développement Avancé",
+            description:
+                "Jeu de plateforme 2D sous Unity avec niveaux, ennemis, collectibles, HUD, clé et écran de victoire.",
+            image: "img/projets/optimized/escape-quest2d.webp",
+            technologies: ["Unity", "C#", "Cinemachine", "TextMeshPro"],
+            codeLink: "https://github.com/mjadid91/developpement-avance-s6-jadid-mohamed.git",
+        },
 
     ];
 
@@ -211,10 +221,11 @@ const ProjectsSection: React.FC = () => {
                                             href={project.codeLink}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="premium-button-outline"
+                                            onClick={(event) => event.stopPropagation()}
+                                            className="inline-flex items-center text-sm font-semibold text-foreground transition hover:text-primary"
                                         >
-                                            <Github className="mr-2 h-4 w-4" />
-                                            Code source
+                                            Code
+                                            <Github className="ml-1 h-4 w-4" />
                                         </a>
                                     )}
                                 </div>
@@ -225,22 +236,23 @@ const ProjectsSection: React.FC = () => {
 
                 <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {secondaryProjects.map((project) => (
-                        <Link
-                            to={project.slug ? `/projets/${project.slug}` : ""}
+                        <article
                             key={project.id}
                             className="premium-card group overflow-hidden transition duration-300 hover:-translate-y-2"
                         >
-                            <div className="relative h-56 overflow-hidden">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    loading="lazy"
-                                    decoding="async"
-                                    className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-110"
-                                />
+                            <Link to={project.slug ? `/projets/${project.slug}` : "#"}>
+                                <div className="relative h-56 overflow-hidden">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-110"
+                                    />
 
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
-                            </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
+                                </div>
+                            </Link>
 
                             <div className="p-6">
                                 <p className="mb-2 text-sm font-medium text-primary">
@@ -261,22 +273,20 @@ const ProjectsSection: React.FC = () => {
                                             key={tech}
                                             className="rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground transition hover:border-primary/40 hover:bg-primary/10 hover:text-foreground dark:border-white/10 dark:bg-white/[0.05] dark:hover:text-white"
                                         >
-                      {tech}
-                    </span>
+              {tech}
+            </span>
                                     ))}
                                 </div>
 
-                                <div className="mt-6 flex items-center gap-3">
-                                    {project.demoLink && (
-                                        <a
-                                            href={project.demoLink}
-                                            target="_blank"
-                                            rel="noreferrer"
+                                <div className="mt-6 flex items-center gap-4">
+                                    {project.slug && (
+                                        <Link
+                                            to={`/projets/${project.slug}`}
                                             className="inline-flex items-center text-sm font-semibold text-primary transition hover:text-blue-500 dark:hover:text-blue-300"
                                         >
-                                            Demo
+                                            Voir détails
                                             <ExternalLink className="ml-1 h-4 w-4" />
-                                        </a>
+                                        </Link>
                                     )}
 
                                     {project.codeLink && (
@@ -292,7 +302,7 @@ const ProjectsSection: React.FC = () => {
                                     )}
                                 </div>
                             </div>
-                        </Link>
+                        </article>
                     ))}
                 </div>
 

@@ -34,7 +34,7 @@ const CurrentGoalSection: React.FC = () => {
                             </div>
 
                             <h2 className="text-balance text-4xl font-black tracking-tight text-foreground sm:text-5xl">
-                                Objectif S6 : consolider mon profil de développeur web.
+                                Consolider mon profil de développeur web.
                             </h2>
 
                             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
